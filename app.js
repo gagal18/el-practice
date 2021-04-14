@@ -20,7 +20,7 @@ const showPosition = (position) => {
     queryLng = position.coords.longitude
     const apiKey = '41a87e2be2fd4652931a6be91078b2c1'
     baseUrl = `https://api.opencagedata.com/geocode/v1/json?q=${queryLat}%2C${queryLng}&key=${apiKey}&pretty=1`
-    axios.get(baseUrl)
+    axios(baseUrl)
         .then(res => {
             const timeZoneCC = res.data.results[0].components.country_code;
             const timeZone = res.data.results[0].components.continent;
@@ -56,5 +56,33 @@ function switchRates(cout, baseRate, sign) {
     }
 }
 
+const navbar = document.getElementById("navbar");
+const navbarToggle = navbar.querySelector(".navbar-toggle");
 
+function openMobileNavbar() {
+  navbar.classList.add("opened");
+  navbarToggle.setAttribute("aria-label", "Close navigation menu.");
+}
+
+function closeMobileNavbar() {
+  navbar.classList.remove("opened");
+  navbarToggle.setAttribute("aria-label", "Open navigation menu.");
+}
+
+navbarToggle.addEventListener("click", () => {
+  if (navbar.classList.contains("opened")) {
+    closeMobileNavbar();
+  } else {
+    openMobileNavbar();
+  }
+});
+
+const navbarMenu = navbar.querySelector(".navbar-menu");
+const navbarLinksContainer = navbar.querySelector(".navbar-links");
+
+navbarLinksContainer.addEventListener("click", (clickEvent) => {
+  clickEvent.stopPropagation();
+});
+
+navbarMenu.addEventListener("click", closeMobileNavbar);
 getLocation()

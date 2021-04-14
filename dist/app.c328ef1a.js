@@ -2698,8 +2698,7 @@ var showPosition = function showPosition(position) {
   queryLng = position.coords.longitude;
   var apiKey = '41a87e2be2fd4652931a6be91078b2c1';
   baseUrl = "https://api.opencagedata.com/geocode/v1/json?q=".concat(queryLat, "%2C").concat(queryLng, "&key=").concat(apiKey, "&pretty=1");
-
-  _axios.default.get(baseUrl).then(function (res) {
+  (0, _axios.default)(baseUrl).then(function (res) {
     var timeZoneCC = res.data.results[0].components.country_code;
     var timeZone = res.data.results[0].components.continent;
     var rateEu = switchRates(timeZone, 'Europe', '€');
@@ -2733,6 +2732,32 @@ function switchRates(cout, baseRate, sign) {
   }
 }
 
+var navbar = document.getElementById("navbar");
+var navbarToggle = navbar.querySelector(".navbar-toggle");
+
+function openMobileNavbar() {
+  navbar.classList.add("opened");
+  navbarToggle.setAttribute("aria-label", "Close navigation menu.");
+}
+
+function closeMobileNavbar() {
+  navbar.classList.remove("opened");
+  navbarToggle.setAttribute("aria-label", "Open navigation menu.");
+}
+
+navbarToggle.addEventListener("click", function () {
+  if (navbar.classList.contains("opened")) {
+    closeMobileNavbar();
+  } else {
+    openMobileNavbar();
+  }
+});
+var navbarMenu = navbar.querySelector(".navbar-menu");
+var navbarLinksContainer = navbar.querySelector(".navbar-links");
+navbarLinksContainer.addEventListener("click", function (clickEvent) {
+  clickEvent.stopPropagation();
+});
+navbarMenu.addEventListener("click", closeMobileNavbar);
 getLocation();
 },{"regenerator-runtime/runtime":"node_modules/regenerator-runtime/runtime.js","axios":"node_modules/axios/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -2762,7 +2787,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50635" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53956" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
