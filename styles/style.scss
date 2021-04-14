@@ -67,6 +67,7 @@ header {
   padding: 10px 20px;
   outline: none;
   border-radius: 10px;
+
 }
 .container{
     margin-top: 150px;
@@ -74,9 +75,39 @@ header {
     h1{
         margin-bottom: 50px;
     }
+    h4{
+      margin-bottom: 40px;
+    }
 }
+.box-part{
+  width: 100%;
+  display: flex;
+  .check-div{
+    display: inline-block;
+    background-color: $whiteSmoke;
+    border-radius: 50px;
+    margin: 10px;
+    padding-left: 10px;
+    text-align: left;
+    padding: 7px;
+    width: 25%;
+    label{
+      margin-left:10px;
+      display: inline;
+      margin-bottom: 0;
+    }
+  }
 
-
+}
+.btn-div{
+  margin-top: 50px;
+}
+.main-image{
+  width: 100%;
+  img{
+    width: 100%;
+  }
+}
 
 //MEDIA QUERIES
 @media (min-width: 1281px) {
@@ -120,6 +151,14 @@ header {
       }
       .menu{
           display: block;
+      }
+      .box-part{
+        display: block;
+        .check-div{
+          margin-left: 10%;
+          display: block;
+          width: 80%;
+        }
       }
 }
 

@@ -97,6 +97,46 @@ header .nav .nav-items ul .item a {
   margin-bottom: 50px;
 }
 
+.container h4 {
+  margin-bottom: 40px;
+}
+
+.box-part {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.box-part .check-div {
+  display: inline-block;
+  background-color: #f5f5f5;
+  border-radius: 50px;
+  margin: 10px;
+  padding-left: 10px;
+  text-align: left;
+  padding: 7px;
+  width: 25%;
+}
+
+.box-part .check-div label {
+  margin-left: 10px;
+  display: inline;
+  margin-bottom: 0;
+}
+
+.btn-div {
+  margin-top: 50px;
+}
+
+.main-image {
+  width: 100%;
+}
+
+.main-image img {
+  width: 100%;
+}
+
 @media (min-width: 1281px) {
   .menu {
     display: none;
@@ -136,6 +176,14 @@ header .nav .nav-items ul .item a {
   }
   .menu {
     display: block;
+  }
+  .box-part {
+    display: block;
+  }
+  .box-part .check-div {
+    margin-left: 10%;
+    display: block;
+    width: 80%;
   }
 }
 
