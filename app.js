@@ -7,8 +7,9 @@ import axios from 'axios';
 let queryLat;
 let queryLng;
 let baseUrl;
-
-function getLocation() {
+const apiKey = '41a87e2be2fd4652931a6be91078b2c1'
+//Get location using built-in JS Func
+const  getLocation =() => {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else {
@@ -18,7 +19,6 @@ function getLocation() {
 const showPosition = (position) => {
     queryLat = position.coords.latitude
     queryLng = position.coords.longitude
-    const apiKey = '41a87e2be2fd4652931a6be91078b2c1'
     baseUrl = `https://api.opencagedata.com/geocode/v1/json?q=${queryLat}%2C${queryLng}&key=${apiKey}&pretty=1`
     axios(baseUrl)
         .then(res => {
@@ -29,12 +29,15 @@ const showPosition = (position) => {
             let rateUs = switchRates(timeZoneCC, 'us', '$')
             if (rateEu) {
                 rateSpan.textContent = rateEu
+                console.log(rateEu)
             }
             if (rateUk) {
                 rateSpan.textContent = rateUk
+                console.log(rateUk)
             }
             if (rateUs) {
                 rateSpan.textContent = rateUs
+                console.log(rateUs)
             }
             else if (!rateUs && !rateUk && !rateEu) {
                 rateSpan.textContent = '$'
@@ -47,7 +50,7 @@ const showPosition = (position) => {
 
 }
 //Functions 
-function switchRates(cout, baseRate, sign) {
+const switchRates = (cout, baseRate, sign) => {
     if (cout.includes(baseRate)) {
         return sign
     }
@@ -55,4 +58,6 @@ function switchRates(cout, baseRate, sign) {
         return null
     }
 }
+
+//Call the getLocation
 getLocation()

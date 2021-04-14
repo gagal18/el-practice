@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+$whiteSmoke: #f5f5f5;
+$blackVari: #292929;
+$greenBtn: #286d5f;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  height: 200vh;
+  width: 100%;
+
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 70px;
+  padding: 10px 50px;
+  background-color: $whiteSmoke;
+  .nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .menu{
+        div {
+            width: 35px;
+            height: 5px;
+            background-color: black;
+            margin: 6px 0;
+          }
+    }
+    img {
+      height: 50px;
+    }
+    .nav-items {
+      width: 500px;
+      ul {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        .item {
+          width: 30%;
+          list-style: none;
+          text-align: center;
+          a {
+            text-decoration: none;
+            color: $blackVari;
+          }
+        }
+      }
+    }
+  }
+}
+.btn {
+  background-color: $greenBtn;
+  color: $whiteSmoke;
+  padding: 10px 20px;
+  outline: none;
+  border-radius: 10px;
+}
+.container{
+    margin-top: 150px;
+    text-align: center;
+    h1{
+        margin-bottom: 50px;
+    }
+}
+
+
+
+//MEDIA QUERIES
+@media (min-width: 1281px) {
+    .menu{
+        display: none;
+    }
+    
+    
+  }
+//TABLET , IPAD...
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .nav-items {
+        display: none;
+      }
+      .menu{
+          display: block;
+      }
+}
+//LANDSCAPE
+@media (min-width: 768px) and (max-width: 1024px) {
+  .nav-items {
+    display: none;
+  }
+  .menu{
+      display: block;
+  }
+}
+//TABLET
+@media (min-width: 481px) and (max-width: 767px) {
+    .nav-items {
+        display: none;
+      }
+      .menu{
+          display: block;
+      }
+}
+//MOBILE
+@media (min-width: 320px) and (max-width: 480px) {
+    .nav-items {
+        display: none;
+      }
+      .menu{
+          display: block;
+      }
+}
+
