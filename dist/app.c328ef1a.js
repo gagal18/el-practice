@@ -2682,34 +2682,34 @@ var rateSpan = document.getElementById('rate');
 var box = document.getElementById('box-part'); //Imports
 
 var arr = [{
-  color: 'blue',
+  id: 'check',
   content: 'Project Managment'
 }, {
-  color: 'blue',
+  id: 'check',
   content: 'Marketing'
 }, {
-  color: 'blue',
+  id: 'check',
   content: 'CRM and Sales'
 }, {
-  color: 'blue',
+  id: 'check',
   content: 'Creative and Design'
 }, {
-  color: 'blue',
+  id: 'check',
   content: 'Software Development'
 }, {
-  color: 'blue',
+  id: 'check',
   content: 'Task Manager'
 }, {
-  color: 'blue',
+  id: 'check',
   content: 'Construction'
 }, {
-  color: 'blue',
+  id: 'check',
   content: 'HR and Recruiment'
 }, {
-  color: 'blue',
+  id: 'check',
   content: 'IT'
 }, {
-  color: 'blue',
+  id: 'check',
   content: '200+ Solutions'
 }]; //Global vars
 
@@ -2739,17 +2739,14 @@ var showPosition = function showPosition(position) {
 
     if (rateEu) {
       rateSpan.textContent = rateEu;
-      console.log(rateEu);
     }
 
     if (rateUk) {
       rateSpan.textContent = rateUk;
-      console.log(rateUk);
     }
 
     if (rateUs) {
       rateSpan.textContent = rateUs;
-      console.log(rateUs);
     } else if (!rateUs && !rateUk && !rateEu) {
       rateSpan.textContent = '$';
     }
@@ -2759,19 +2756,14 @@ var showPosition = function showPosition(position) {
 }; //Functions 
 
 
-var boxChecked = function boxChecked() {
-  if (checkbox.checked == true) {
-    alert('PRESSED');
-  }
-};
-
 var switchRates = function switchRates(cout, baseRate, sign) {
   if (cout.includes(baseRate)) {
     return sign;
   } else {
     return null;
   }
-};
+}; //Dynamicly outputing check boxes with func
+
 
 var showCheckBoxes = function showCheckBoxes() {
   var _loop = function _loop(i) {
@@ -2780,13 +2772,13 @@ var showCheckBoxes = function showCheckBoxes() {
     checkDiv.id = 'check-div';
     checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
-    checkbox.id = arr[i].color;
+    checkbox.id = arr[i].id;
     label = document.createElement('label');
     label.innerText = arr[i].content;
     checkDiv.appendChild(checkbox);
     checkDiv.appendChild(label);
     box.appendChild(checkDiv);
-    x = document.querySelectorAll('#blue');
+    x = document.querySelectorAll('#check');
     x[i].addEventListener('click', function () {
       if (x[i].checked) {
         x[i].parentElement.classList.add('checked');
@@ -2794,7 +2786,6 @@ var showCheckBoxes = function showCheckBoxes() {
         x[i].parentElement.classList.remove('checked');
       }
     });
-    console.log(x[i]);
   };
 
   for (var i = 0; i < arr.length; i++) {
@@ -2839,7 +2830,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51587" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52166" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

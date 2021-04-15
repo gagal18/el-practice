@@ -5,16 +5,16 @@ const box = document.getElementById('box-part')
 import 'regenerator-runtime/runtime';
 import axios from 'axios';
 const arr = [
-    { color: 'blue', content: 'Project Managment' },
-    { color: 'blue', content: 'Marketing' },
-    { color: 'blue', content: 'CRM and Sales' },
-    { color: 'blue', content: 'Creative and Design' },
-    { color: 'blue', content: 'Software Development' },
-    { color: 'blue', content: 'Task Manager' },
-    { color: 'blue', content: 'Construction' },
-    { color: 'blue', content: 'HR and Recruiment' },
-    { color: 'blue', content: 'IT' },
-    { color: 'blue', content: '200+ Solutions' }
+    { id: 'check', content: 'Project Managment' },
+    { id: 'check', content: 'Marketing' },
+    { id: 'check', content: 'CRM and Sales' },
+    { id: 'check', content: 'Creative and Design' },
+    { id: 'check', content: 'Software Development' },
+    { id: 'check', content: 'Task Manager' },
+    { id: 'check', content: 'Construction' },
+    { id: 'check', content: 'HR and Recruiment' },
+    { id: 'check', content: 'IT' },
+    { id: 'check', content: '200+ Solutions' }
 ]
 //Global vars
 let queryLat;
@@ -42,15 +42,12 @@ const showPosition = (position) => {
             let rateUs = switchRates(timeZoneCC, 'us', '$')
             if (rateEu) {
                 rateSpan.textContent = rateEu
-                console.log(rateEu)
             }
             if (rateUk) {
                 rateSpan.textContent = rateUk
-                console.log(rateUk)
             }
             if (rateUs) {
                 rateSpan.textContent = rateUs
-                console.log(rateUs)
             }
             else if (!rateUs && !rateUk && !rateEu) {
                 rateSpan.textContent = '$'
@@ -63,11 +60,6 @@ const showPosition = (position) => {
 
 }
 //Functions 
-const boxChecked = () => {
-    if (checkbox.checked == true) {
-        alert('PRESSED')
-    }
-}
 const switchRates = (cout, baseRate, sign) => {
     if (cout.includes(baseRate)) {
         return sign
@@ -76,7 +68,7 @@ const switchRates = (cout, baseRate, sign) => {
         return null
     }
 }
-
+//Dynamicly outputing check boxes with func
 const showCheckBoxes = () => {
     for (let i = 0; i < arr.length; i++) {
         var checkDiv = document.createElement('div')
@@ -84,23 +76,22 @@ const showCheckBoxes = () => {
         checkDiv.id = 'check-div'
         var checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
-        checkbox.id = arr[i].color;
+        checkbox.id = arr[i].id;
 
         var label = document.createElement('label')
         label.innerText = arr[i].content
         checkDiv.appendChild(checkbox)
         checkDiv.appendChild(label)
         box.appendChild(checkDiv)
-        var x = document.querySelectorAll('#blue')
-        x[i].addEventListener('click' , ()=>{
-            if(x[i].checked){
+        var x = document.querySelectorAll('#check')
+        x[i].addEventListener('click', () => {
+            if (x[i].checked) {
                 x[i].parentElement.classList.add('checked')
             }
-            else{
+            else {
                 x[i].parentElement.classList.remove('checked')
             }
         })
-        console.log(x[i])        
     }
 
 }
