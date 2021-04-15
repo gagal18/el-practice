@@ -4,6 +4,7 @@ $blackVari: #292929;
 $greenBtn: #286d5f;
 $greyBckg: #a1a1a1;
 $roseCol: #f4ede4;
+
 * {
   margin: 0;
   padding: 0;
@@ -112,227 +113,96 @@ header {
     width: 100%;
   }
 }
-.features {
-  width: 100%;
-  background-color: $roseCol;
-  .right-img {
-    position: absolute;
-    width: 500px;
-    right: 0;
-    margin-right: 75px;
-    z-index: 10;
-  }
-  .text {
-    padding-top: 50px;
-    top: 0;
-    left: 0%;
-    text-align: start;
-    h1 {
-      font-weight: bold;
-    }
-    .grid-container {
-      margin-top: 50px;
-      display: grid;
-      height: 300px;
-      width: 80%;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 50px 25px;
-      grid-template-areas:
-        "part1 part2 part3"
-        "part1 part2 part3";
-      .part1 , .part2 {
-        .iconTop {
-          margin-left: 20px;
-          margin-top: 20px;
-          text-align: center;
-          border: 3px solid #292929;
-          border-radius: 15%;
-          font-size: 40px;
-          width: 25%;
-        }
-        .gridContent{
-          padding: 10px;
-          .arrow{
-            text-align: right;
-            font-size: 30px;
-            font-weight: bold;
-            cursor: pointer;
-          }
-        }
-      }
-      .part3{
-        .iconTop {
-          margin-left: 20px;
-          margin-top: 20px;
-          text-align: center;
-          border: 3px solid #292929;
-          border-radius: 15%;
-          font-size: 30px;
-          width: 25%;
-        }
-        .gridContent{
-          font-size: 15px;
-          .text{
-            padding-top: 5px;
-          }
-          h3{
-            font-size: 15px;
-          }
-          .arrow{
-            text-align: right;
-            font-size: 30px;
-            font-weight: bold;
-            cursor: pointer;
-          }
-        }
-      }
-      div {
-        background-color: $whiteSmoke;
-      }
-      .part3 {
-        background-color: $roseCol;
-        div {
-          background-color: $whiteSmoke;
-        }
-      }
-    }
-
-    .part1 {
-      grid-area: part1;
-    }
-    .part2 {
-      grid-area: part2;
-    }
-    .part3 {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 25px 0px;
-      grid-template-areas:
-        "p1 p1 p1"
-        "p2 p2 p2";
-      grid-area: part3;
-    }
-    .p1 {
-      grid-area: p1;
-    }
-    .p2 {
-      grid-area: p2;
-    }
-  }
-}
-.text-right{
+// grid Features
+.features{
   position: relative;
-  z-index: 50;
-    padding-top: 50px;
-    top: 0;
-    left: 0%;
+  height: 200vh;
+  display: block;
+  padding: 50px;
+  background-color: $roseCol;
+  .img{
+    width: 750px;
+    position: absolute;
+    right: 0;
+    margin-right: 100px;
+  }
+  .content{
     text-align: start;
-    h1 {
-      font-weight: bold;
-    }
-    .grid-container {
-      z-index: 30;
-      margin-top: 50px;
-      margin-left: 300px;
-      display: grid;
-      height: 300px;
-      width: 80%;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 50px 25px;
-      grid-template-areas:
-        "part1 part2 part3"
-        "part1 part2 part3";
-      .part1 , .part2 {
-        .iconTop {
-          margin-left: 20px;
-          margin-top: 20px;
-          text-align: center;
-          border: 3px solid #292929;
-          border-radius: 15%;
-          font-size: 40px;
-          width: 25%;
-        }
-        .gridContent{
-          padding: 10px;
-          .arrow{
-            text-align: right;
-            font-size: 30px;
-            font-weight: bold;
-            cursor: pointer;
-          }
-        }
-      }
-      .part3{
-        .iconTop {
-          margin-left: 20px;
-          margin-top: 20px;
-          text-align: center;
-          border: 3px solid #292929;
-          border-radius: 15%;
-          font-size: 30px;
-          width: 25%;
-        }
-        .gridContent{
-          font-size: 15px;
-          .text{
-            padding-top: 5px;
-          }
-          h3{
-            font-size: 15px;
-          }
-          .arrow{
-            text-align: right;
-            font-size: 30px;
-            font-weight: bold;
-            cursor: pointer;
-          }
-        }
-      }
-      div {
+    margin-bottom: 50px;
+    font-weight: bold
+  }
+  .grid-container {
+    position: absolute;
+    width: 50%;
+    height: 250px;
+    left : 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 25px;
+    grid-template-areas:
+      "p1 p2 p3x4";
+      .gridItem{
         background-color: $whiteSmoke;
       }
-      .part3 {
-        background-color: $roseCol;
-        div {
-          background-color: $whiteSmoke;
+  }
+  .p1 { grid-area: p1; }
+  .p2 { grid-area: p2; }
+  .p3x4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 25px 0px;
+    grid-template-areas:
+      "p3 p3 p3"
+      "p4 p4 p4";
+    grid-area: p3x4;
+  }
+  .p3 { grid-area: p3; }
+  .p4 { grid-area: p4; }
+  .gridItem{
+    i{
+      font-size: xxx-large;
+      position: relative;
+      margin-top: 15px;
+      left: -70px;
+      border: 3px solid black;
+      padding: 10px;
+      border-radius: 15px;
+    }
+    div.text{
+      position: relative;
+      top: 50px;
+      text-align: start;
+      padding: 10px;
+    }
+    div.arrow{
+      position: relative;
+    right: 0;
+    bottom: 0;
+    text-align: right;
+    font-size: xxx-large;
+    margin-right: 10px;
+    }
+   
+  }
+  .p3.gridItem , .p4.gridItem{
+    i{
+      font-size: 30px!important;
+    }
+    .gridContent{
+      height: 70px;
+      .text{
+        top: 10px;
+        .arrow{
+          position: absolute;
+          cursor: pointer;
         }
       }
     }
-
-    .part1 {
-      grid-area: part1;
-    }
-    .part2 {
-      grid-area: part2;
-    }
-    .part3 {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 25px 0px;
-      grid-template-areas:
-        "p1 p1 p1"
-        "p2 p2 p2";
-      grid-area: part3;
-    }
-    .p1 {
-      grid-area: p1;
-    }
-    .p2 {
-      grid-area: p2;
-    }
   }
-.left-img {
-  position: absolute;
-  width: 500px;
-  left: 0;
-  margin-top: -15px;
-  margin-left: 150px;
-  z-index: 10;
 }
+
 //MEDIA QUERIES
 @media (min-width: 1281px) {
   .menu {
@@ -377,6 +247,7 @@ header {
 }
 //MOBILE
 @media (min-width: 320px) and (max-width: 480px) {
+  
   header {
     padding: 10px;
     .nav-items {
@@ -395,4 +266,27 @@ header {
       width: 80%;
     }
   }
+  .features{
+    height: 300vh;
+    .img{
+      top: -15px;
+      width: 75%;
+      left: 45px;
+    }
+    .gridItem {
+    i{
+      left: 0;
+    }
+  }
+  .grid-container{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 25px 0px;
+    grid-template-areas: 
+    'p1'
+    'p2'
+    'p3x4'
+    ;
+  }
+}
 }
