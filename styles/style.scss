@@ -112,20 +112,227 @@ header {
     width: 100%;
   }
 }
-.features{
-  height: 100vh;
+.features {
   width: 100%;
   background-color: $roseCol;
-  .right-img{
+  .right-img {
     position: absolute;
     width: 500px;
     right: 0;
     margin-right: 75px;
     z-index: 10;
   }
+  .text {
+    padding-top: 50px;
+    top: 0;
+    left: 0%;
+    text-align: start;
+    h1 {
+      font-weight: bold;
+    }
+    .grid-container {
+      margin-top: 50px;
+      display: grid;
+      height: 300px;
+      width: 80%;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 50px 25px;
+      grid-template-areas:
+        "part1 part2 part3"
+        "part1 part2 part3";
+      .part1 , .part2 {
+        .iconTop {
+          margin-left: 20px;
+          margin-top: 20px;
+          text-align: center;
+          border: 3px solid #292929;
+          border-radius: 15%;
+          font-size: 40px;
+          width: 25%;
+        }
+        .gridContent{
+          padding: 10px;
+          .arrow{
+            text-align: right;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+          }
+        }
+      }
+      .part3{
+        .iconTop {
+          margin-left: 20px;
+          margin-top: 20px;
+          text-align: center;
+          border: 3px solid #292929;
+          border-radius: 15%;
+          font-size: 30px;
+          width: 25%;
+        }
+        .gridContent{
+          font-size: 15px;
+          .text{
+            padding-top: 5px;
+          }
+          h3{
+            font-size: 15px;
+          }
+          .arrow{
+            text-align: right;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+          }
+        }
+      }
+      div {
+        background-color: $whiteSmoke;
+      }
+      .part3 {
+        background-color: $roseCol;
+        div {
+          background-color: $whiteSmoke;
+        }
+      }
+    }
 
+    .part1 {
+      grid-area: part1;
+    }
+    .part2 {
+      grid-area: part2;
+    }
+    .part3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 25px 0px;
+      grid-template-areas:
+        "p1 p1 p1"
+        "p2 p2 p2";
+      grid-area: part3;
+    }
+    .p1 {
+      grid-area: p1;
+    }
+    .p2 {
+      grid-area: p2;
+    }
+  }
 }
+.text-right{
+  position: relative;
+  z-index: 50;
+    padding-top: 50px;
+    top: 0;
+    left: 0%;
+    text-align: start;
+    h1 {
+      font-weight: bold;
+    }
+    .grid-container {
+      z-index: 30;
+      margin-top: 50px;
+      margin-left: 300px;
+      display: grid;
+      height: 300px;
+      width: 80%;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 50px 25px;
+      grid-template-areas:
+        "part1 part2 part3"
+        "part1 part2 part3";
+      .part1 , .part2 {
+        .iconTop {
+          margin-left: 20px;
+          margin-top: 20px;
+          text-align: center;
+          border: 3px solid #292929;
+          border-radius: 15%;
+          font-size: 40px;
+          width: 25%;
+        }
+        .gridContent{
+          padding: 10px;
+          .arrow{
+            text-align: right;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+          }
+        }
+      }
+      .part3{
+        .iconTop {
+          margin-left: 20px;
+          margin-top: 20px;
+          text-align: center;
+          border: 3px solid #292929;
+          border-radius: 15%;
+          font-size: 30px;
+          width: 25%;
+        }
+        .gridContent{
+          font-size: 15px;
+          .text{
+            padding-top: 5px;
+          }
+          h3{
+            font-size: 15px;
+          }
+          .arrow{
+            text-align: right;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+          }
+        }
+      }
+      div {
+        background-color: $whiteSmoke;
+      }
+      .part3 {
+        background-color: $roseCol;
+        div {
+          background-color: $whiteSmoke;
+        }
+      }
+    }
 
+    .part1 {
+      grid-area: part1;
+    }
+    .part2 {
+      grid-area: part2;
+    }
+    .part3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 25px 0px;
+      grid-template-areas:
+        "p1 p1 p1"
+        "p2 p2 p2";
+      grid-area: part3;
+    }
+    .p1 {
+      grid-area: p1;
+    }
+    .p2 {
+      grid-area: p2;
+    }
+  }
+.left-img {
+  position: absolute;
+  width: 500px;
+  left: 0;
+  margin-top: -15px;
+  margin-left: 150px;
+  z-index: 10;
+}
 //MEDIA QUERIES
 @media (min-width: 1281px) {
   .menu {
