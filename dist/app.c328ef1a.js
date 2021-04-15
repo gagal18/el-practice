@@ -2678,7 +2678,8 @@ var _axios = _interopRequireDefault(require("axios"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //GET ELEMENT FROM HTML
-var rateSpan = document.getElementById('rate'); //Imports
+var rateSpan = document.getElementById('rate');
+var checkBox = document.getElementById('blue'); //Imports
 
 //Global vars
 var queryLat;
@@ -2733,8 +2734,18 @@ var switchRates = function switchRates(cout, baseRate, sign) {
   } else {
     return null;
   }
-}; //Call the getLocation
+};
 
+function boxChecked() {
+  if (checkBox.checked) {
+    alert('PRESSED');
+    console.log(checkBox.checked);
+  }
+}
+
+boxChecked(); //Event listeners
+
+checkBox.addEventListener('click', boxChecked); //Call the getLocation
 
 getLocation();
 },{"regenerator-runtime/runtime":"node_modules/regenerator-runtime/runtime.js","axios":"node_modules/axios/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -2765,7 +2776,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49849" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50166" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

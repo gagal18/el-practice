@@ -1,5 +1,6 @@
 //GET ELEMENT FROM HTML
 const rateSpan = document.getElementById('rate')
+const checkBox = document.getElementById('blue')
 //Imports
 import 'regenerator-runtime/runtime';
 import axios from 'axios';
@@ -58,6 +59,14 @@ const switchRates = (cout, baseRate, sign) => {
         return null
     }
 }
-
+function boxChecked (){
+    if(checkBox.checked){
+        alert('PRESSED')
+        console.log(checkBox.checked)
+    }
+}
+boxChecked()
+//Event listeners
+checkBox.addEventListener('click' , boxChecked)
 //Call the getLocation
 getLocation()
