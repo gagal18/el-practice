@@ -233,8 +233,7 @@ header .nav .nav-items ul .item a {
   -ms-grid-rows: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
   gap: 25px 0px;
-      grid-template-areas: "p3 p3 p3"
- "p4 p4 p4";
+      grid-template-areas: "p3 p3 p3" "p4 p4 p4";
   -ms-grid-row: 1;
   -ms-grid-column: 3;
   grid-area: p3x4;
@@ -341,7 +340,9 @@ header .nav .nav-items ul .item a {
   font-weight: bold;
 }
 
-
+.pricing {
+  /* Hover Effects on Card */
+}
 
 .pricing h1 {
   text-align: center;
@@ -502,9 +503,9 @@ header .nav .nav-items ul .item a {
     left: 45px;
   }
   .features .gridItem {
-    width: 190% !important;
+    width: 150% !important;
     position: relative;
-    left: -90px;
+    left: -100px;
   }
   .features .gridItem i {
     left: 0;
@@ -515,9 +516,7 @@ header .nav .nav-items ul .item a {
     -ms-grid-rows: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
     gap: 25px 0px;
-        grid-template-areas: "p1"
- "p2"
- "p3x4";
+        grid-template-areas: "p1" "p2" "p3x4";
   }
 }
 /*# sourceMappingURL=style.css.map */
