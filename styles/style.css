@@ -387,9 +387,9 @@ header .nav .nav-items ul .item a {
     left: 45px;
   }
   .features .gridItem {
-    width: 150% !important;
+    width: 190% !important;
     position: relative;
-    left: -60px;
+    left: -90px;
   }
   .features .gridItem i {
     left: 0;
