@@ -156,9 +156,13 @@ header {
 }
 //MOBILE
 @media (min-width: 320px) and (max-width: 480px) {
+  header{
+    padding: 10px;
     .nav-items {
-        display: none;
-      }
+      display: none;
+    }
+  }
+    
       .menu{
           display: block;
       }

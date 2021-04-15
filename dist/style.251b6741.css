@@ -184,7 +184,10 @@ header .nav .nav-items ul .item a {
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
-  .nav-items {
+  header {
+    padding: 10px;
+  }
+  header .nav-items {
     display: none;
   }
   .menu {
