@@ -143,9 +143,38 @@ header .nav .nav-items ul .item a {
   width: 100%;
 }
 
+.part {
+  position: relative;
+  height: 25%;
+}
+
+.right div.grid-container {
+  right: 100px;
+}
+
+.right .content {
+  text-align: end;
+}
+
+.right img {
+  left: 70px;
+}
+
+.left div.grid-container {
+  left: 100px;
+}
+
+.left .content {
+  text-align: start;
+}
+
+.left img {
+  right: 0;
+}
+
 .features {
   position: relative;
-  height: 200vh;
+  height: 2500px;
   display: block;
   padding: 50px;
   background-color: #f4ede4;
@@ -154,21 +183,22 @@ header .nav .nav-items ul .item a {
 .features .img {
   width: 750px;
   position: absolute;
-  right: 0;
-  margin-right: 100px;
+  top: -250px;
+  z-index: 1;
 }
 
 .features .content {
-  text-align: start;
   margin-bottom: 50px;
+  position: relative;
   font-weight: bold;
+  z-index: 100;
 }
 
 .features .grid-container {
   position: absolute;
   width: 50%;
   height: 250px;
-  left: 100px;
+  z-index: 20;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr;
@@ -242,6 +272,7 @@ header .nav .nav-items ul .item a {
 
 .features .gridItem div.arrow {
   position: relative;
+  cursor: pointer;
   right: 0;
   bottom: 0;
   text-align: right;
@@ -249,19 +280,23 @@ header .nav .nav-items ul .item a {
   margin-right: 10px;
 }
 
-.features .p3.gridItem i, .features .p4.gridItem i {
+.features .p3.gridItem i,
+.features .p4.gridItem i {
   font-size: 30px !important;
 }
 
-.features .p3.gridItem .gridContent, .features .p4.gridItem .gridContent {
+.features .p3.gridItem .gridContent,
+.features .p4.gridItem .gridContent {
   height: 70px;
 }
 
-.features .p3.gridItem .gridContent .text, .features .p4.gridItem .gridContent .text {
+.features .p3.gridItem .gridContent .text,
+.features .p4.gridItem .gridContent .text {
   top: 10px;
 }
 
-.features .p3.gridItem .gridContent .text .arrow, .features .p4.gridItem .gridContent .text .arrow {
+.features .p3.gridItem .gridContent .text .arrow,
+.features .p4.gridItem .gridContent .text .arrow {
   position: absolute;
   cursor: pointer;
 }
@@ -318,6 +353,9 @@ header .nav .nav-items ul .item a {
   header .nav-items {
     display: none;
   }
+  .right div.grid-container {
+    right: 70px;
+  }
   .menu {
     display: block;
   }
@@ -331,12 +369,27 @@ header .nav .nav-items ul .item a {
     width: 80%;
   }
   .features {
-    height: 300vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 5000px;
+  }
+  .features .part {
+    height: 50%;
   }
   .features .img {
     top: -15px;
     width: 75%;
     left: 45px;
+  }
+  .features .gridItem {
+    width: 150% !important;
+    position: relative;
+    left: -60px;
   }
   .features .gridItem i {
     left: 0;
@@ -347,7 +400,7 @@ header .nav .nav-items ul .item a {
     -ms-grid-rows: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
     gap: 25px 0px;
-        grid-template-areas: 'p1' 'p2' 'p3x4';
+        grid-template-areas: "p1" "p2" "p3x4";
   }
 }
 /*# sourceMappingURL=style.css.map */

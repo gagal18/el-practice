@@ -113,41 +113,71 @@ header {
     width: 100%;
   }
 }
-// grid Features
-.features{
+.part {
   position: relative;
-  height: 200vh;
+  height: 25%;
+}
+.right {
+  div.grid-container {
+    right: 100px;
+  }
+  .content {
+    text-align: end;
+  }
+  img {
+    left: 70px;
+  }
+}
+.left {
+  div.grid-container {
+    left: 100px;
+  }
+  .content {
+    text-align: start;
+  }
+  img {
+    right: 0;
+  }
+}
+// grid Features
+.features {
+  position: relative;
+  height: 2500px;
   display: block;
   padding: 50px;
   background-color: $roseCol;
-  .img{
+  .img {
     width: 750px;
     position: absolute;
-    right: 0;
-    margin-right: 100px;
+    top: -250px;
+    z-index: 1;
   }
-  .content{
-    text-align: start;
+  .content {
     margin-bottom: 50px;
-    font-weight: bold
+    position: relative;
+    font-weight: bold;
+    z-index: 100;
   }
   .grid-container {
     position: absolute;
     width: 50%;
     height: 250px;
-    left : 100px;
+    z-index: 20;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     gap: 0px 25px;
-    grid-template-areas:
-      "p1 p2 p3x4";
-      .gridItem{
-        background-color: $whiteSmoke;
-      }
+    grid-template-areas: "p1 p2 p3x4";
+    .gridItem {
+      background-color: $whiteSmoke;
+    }
   }
-  .p1 { grid-area: p1; }
-  .p2 { grid-area: p2; }
+  .p1 {
+    grid-area: p1;
+  }
+  .p2 {
+    grid-area: p2;
+  }
   .p3x4 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -158,10 +188,14 @@ header {
       "p4 p4 p4";
     grid-area: p3x4;
   }
-  .p3 { grid-area: p3; }
-  .p4 { grid-area: p4; }
-  .gridItem{
-    i{
+  .p3 {
+    grid-area: p3;
+  }
+  .p4 {
+    grid-area: p4;
+  }
+  .gridItem {
+    i {
       font-size: xxx-large;
       position: relative;
       margin-top: 15px;
@@ -170,31 +204,32 @@ header {
       padding: 10px;
       border-radius: 15px;
     }
-    div.text{
+    div.text {
       position: relative;
       top: 50px;
       text-align: start;
       padding: 10px;
     }
-    div.arrow{
+    div.arrow {
       position: relative;
-    right: 0;
-    bottom: 0;
-    text-align: right;
-    font-size: xxx-large;
-    margin-right: 10px;
+      cursor: pointer;
+      right: 0;
+      bottom: 0;
+      text-align: right;
+      font-size: xxx-large;
+      margin-right: 10px;
     }
-   
   }
-  .p3.gridItem , .p4.gridItem{
-    i{
-      font-size: 30px!important;
+  .p3.gridItem,
+  .p4.gridItem {
+    i {
+      font-size: 30px !important;
     }
-    .gridContent{
+    .gridContent {
       height: 70px;
-      .text{
+      .text {
         top: 10px;
-        .arrow{
+        .arrow {
           position: absolute;
           cursor: pointer;
         }
@@ -247,14 +282,15 @@ header {
 }
 //MOBILE
 @media (min-width: 320px) and (max-width: 480px) {
-  
   header {
     padding: 10px;
     .nav-items {
       display: none;
     }
   }
-
+  .right div.grid-container {
+    right: 70px;
+  }
   .menu {
     display: block;
   }
@@ -266,27 +302,34 @@ header {
       width: 80%;
     }
   }
-  .features{
-    height: 300vh;
-    .img{
+  .features {
+    display: flex;
+    flex-direction: column;
+    height: 5000px;
+    .part {
+      height: 50%;
+    }
+    .img {
       top: -15px;
       width: 75%;
       left: 45px;
     }
     .gridItem {
-    i{
-      left: 0;
+      width: 150% !important;
+      position: relative;
+      left: -60px;
+      i {
+        left: 0;
+      }
+    }
+    .grid-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 25px 0px;
+      grid-template-areas:
+        "p1"
+        "p2"
+        "p3x4";
     }
   }
-  .grid-container{
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 25px 0px;
-    grid-template-areas: 
-    'p1'
-    'p2'
-    'p3x4'
-    ;
-  }
-}
 }
