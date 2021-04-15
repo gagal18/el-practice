@@ -103,9 +103,10 @@ header .nav .nav-items ul .item a {
 
 .box-part {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto auto auto;
+      grid-template-columns: auto auto auto auto auto;
 }
 
 .box-part .check-div {
@@ -116,7 +117,7 @@ header .nav .nav-items ul .item a {
   padding-left: 10px;
   text-align: left;
   padding: 7px;
-  width: 25%;
+  width: 100%;
 }
 
 .box-part .check-div label {
@@ -150,6 +151,10 @@ header .nav .nav-items ul .item a {
   .menu {
     display: block;
   }
+  .box-part {
+    -ms-grid-columns: auto  auto auto;
+        grid-template-columns: auto  auto auto;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -159,6 +164,10 @@ header .nav .nav-items ul .item a {
   .menu {
     display: block;
   }
+  .box-part {
+    -ms-grid-columns: auto  auto auto;
+        grid-template-columns: auto  auto auto;
+  }
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
@@ -167,6 +176,10 @@ header .nav .nav-items ul .item a {
   }
   .menu {
     display: block;
+  }
+  .box-part {
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
   }
 }
 
@@ -178,7 +191,8 @@ header .nav .nav-items ul .item a {
     display: block;
   }
   .box-part {
-    display: block;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
   }
   .box-part .check-div {
     margin-left: 10%;
