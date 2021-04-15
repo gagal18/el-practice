@@ -503,9 +503,9 @@ header .nav .nav-items ul .item a {
     left: 45px;
   }
   .features .gridItem {
-    width: 150% !important;
+    width: 100% !important;
     position: relative;
-    left: -100px;
+    left: -60px;
   }
   .features .gridItem i {
     left: 0;
