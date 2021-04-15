@@ -2678,7 +2678,6 @@ var _axios = _interopRequireDefault(require("axios"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //GET ELEMENT FROM HTML
-var rateSpan = document.getElementById('rate');
 var box = document.getElementById('box-part'); //Imports
 
 var arr = [{
@@ -2738,17 +2737,33 @@ var showPosition = function showPosition(position) {
     var rateUs = switchRates(timeZoneCC, 'us', '$');
 
     if (rateEu) {
-      rateSpan.textContent = rateEu;
+      var rateSpan = document.querySelectorAll('#rate');
+
+      for (var i = 0; i < rateSpan.length; i++) {
+        rateSpan[i].textContent = rateEu;
+      }
     }
 
     if (rateUk) {
-      rateSpan.textContent = rateUk;
+      var rateSpan = document.querySelectorAll('#rate');
+
+      for (var _i = 0; _i < rateSpan.length; _i++) {
+        rateSpan[_i].textContent = rateUk;
+      }
     }
 
     if (rateUs) {
-      rateSpan.textContent = rateUs;
+      var rateSpan = document.querySelectorAll('#rate');
+
+      for (var _i2 = 0; _i2 < rateSpan.length; _i2++) {
+        rateSpan[_i2].textContent = rateUs;
+      }
     } else if (!rateUs && !rateUk && !rateEu) {
-      rateSpan.textContent = '$';
+      var rateSpan = document.querySelectorAll('#rate');
+
+      for (var _i3 = 0; _i3 < rateSpan.length; _i3++) {
+        rateSpan[_i3].textContent = '$';
+      }
     }
   }).catch(function (err) {
     console.log(err);
@@ -2830,7 +2845,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52104" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63587" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

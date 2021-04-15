@@ -1,5 +1,4 @@
 //GET ELEMENT FROM HTML
-const rateSpan = document.getElementById('rate')
 const box = document.getElementById('box-part')
 //Imports
 import 'regenerator-runtime/runtime';
@@ -41,16 +40,32 @@ const showPosition = (position) => {
             let rateUk = switchRates(timeZoneCC, 'gb', '£')
             let rateUs = switchRates(timeZoneCC, 'us', '$')
             if (rateEu) {
-                rateSpan.textContent = rateEu
+                var rateSpan = document.querySelectorAll('#rate')
+                for (let i = 0; i < rateSpan.length; i++) {
+                    rateSpan[i].textContent = rateEu
+                    
+                }
             }
             if (rateUk) {
-                rateSpan.textContent = rateUk
+                var rateSpan = document.querySelectorAll('#rate')
+                for (let i = 0; i < rateSpan.length; i++) {
+                    rateSpan[i].textContent = rateUk
+                    
+                }
             }
             if (rateUs) {
-                rateSpan.textContent = rateUs
+                var rateSpan = document.querySelectorAll('#rate')
+                for (let i = 0; i < rateSpan.length; i++) {
+                    rateSpan[i].textContent = rateUs
+                    
+                }
             }
             else if (!rateUs && !rateUk && !rateEu) {
-                rateSpan.textContent = '$'
+                var rateSpan = document.querySelectorAll('#rate')
+                for (let i = 0; i < rateSpan.length; i++) {
+                    rateSpan[i].textContent = '$'
+                    
+                }
             }
         })
         .catch(err => {
