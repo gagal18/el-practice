@@ -1,16 +1,28 @@
 //GET ELEMENT FROM HTML
 const rateSpan = document.getElementById('rate')
-const checkBox = document.getElementById('blue')
+const box = document.getElementById('box-part')
 //Imports
 import 'regenerator-runtime/runtime';
 import axios from 'axios';
+const arr = [
+    { color: 'blue', content: 'Project Managment' },
+    { color: 'blue', content: 'Marketing' },
+    { color: 'blue', content: 'CRM and Sales' },
+    { color: 'blue', content: 'Creative and Design' },
+    { color: 'blue', content: 'Software Development' },
+    { color: 'blue', content: 'Task Manager' },
+    { color: 'blue', content: 'Construction' },
+    { color: 'blue', content: 'HR and Recruiment' },
+    { color: 'blue', content: 'IT' },
+    { color: 'blue', content: '200+ Solutions' }
+]
 //Global vars
 let queryLat;
 let queryLng;
 let baseUrl;
 const apiKey = '41a87e2be2fd4652931a6be91078b2c1'
 //Get location using built-in JS Func
-const  getLocation =() => {
+const getLocation = () => {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else {
@@ -51,6 +63,11 @@ const showPosition = (position) => {
 
 }
 //Functions 
+const boxChecked = () => {
+    if (checkbox.checked == true) {
+        alert('PRESSED')
+    }
+}
 const switchRates = (cout, baseRate, sign) => {
     if (cout.includes(baseRate)) {
         return sign
@@ -59,14 +76,37 @@ const switchRates = (cout, baseRate, sign) => {
         return null
     }
 }
-function boxChecked (){
-    if(checkBox.checked){
-        alert('PRESSED')
-        console.log(checkBox.checked)
+
+const showCheckBoxes = () => {
+    for (let i = 0; i < arr.length; i++) {
+        var checkDiv = document.createElement('div')
+        checkDiv.classList.add('check-div')
+        checkDiv.id = 'check-div'
+        var checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.id = arr[i].color;
+
+        var label = document.createElement('label')
+        label.innerText = arr[i].content
+        checkDiv.appendChild(checkbox)
+        checkDiv.appendChild(label)
+        box.appendChild(checkDiv)
+        var x = document.querySelectorAll('#blue')
+        x[i].addEventListener('click' , ()=>{
+            if(x[i].checked){
+                x[i].parentElement.classList.add('checked')
+            }
+            else{
+                x[i].parentElement.classList.remove('checked')
+            }
+        })
+        console.log(x[i])        
     }
+
 }
-boxChecked()
+
 //Event listeners
-checkBox.addEventListener('click' , boxChecked)
+
 //Call the getLocation
 getLocation()
+showCheckBoxes()

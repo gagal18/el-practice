@@ -2679,9 +2679,40 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 //GET ELEMENT FROM HTML
 var rateSpan = document.getElementById('rate');
-var checkBox = document.getElementById('blue'); //Imports
+var box = document.getElementById('box-part'); //Imports
 
-//Global vars
+var arr = [{
+  color: 'blue',
+  content: 'Project Managment'
+}, {
+  color: 'blue',
+  content: 'Marketing'
+}, {
+  color: 'blue',
+  content: 'CRM and Sales'
+}, {
+  color: 'blue',
+  content: 'Creative and Design'
+}, {
+  color: 'blue',
+  content: 'Software Development'
+}, {
+  color: 'blue',
+  content: 'Task Manager'
+}, {
+  color: 'blue',
+  content: 'Construction'
+}, {
+  color: 'blue',
+  content: 'HR and Recruiment'
+}, {
+  color: 'blue',
+  content: 'IT'
+}, {
+  color: 'blue',
+  content: '200+ Solutions'
+}]; //Global vars
+
 var queryLat;
 var queryLng;
 var baseUrl;
@@ -2728,6 +2759,12 @@ var showPosition = function showPosition(position) {
 }; //Functions 
 
 
+var boxChecked = function boxChecked() {
+  if (checkbox.checked == true) {
+    alert('PRESSED');
+  }
+};
+
 var switchRates = function switchRates(cout, baseRate, sign) {
   if (cout.includes(baseRate)) {
     return sign;
@@ -2736,18 +2773,44 @@ var switchRates = function switchRates(cout, baseRate, sign) {
   }
 };
 
-function boxChecked() {
-  if (checkBox.checked) {
-    alert('PRESSED');
-    console.log(checkBox.checked);
+var showCheckBoxes = function showCheckBoxes() {
+  var _loop = function _loop(i) {
+    checkDiv = document.createElement('div');
+    checkDiv.classList.add('check-div');
+    checkDiv.id = 'check-div';
+    checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.id = arr[i].color;
+    label = document.createElement('label');
+    label.innerText = arr[i].content;
+    checkDiv.appendChild(checkbox);
+    checkDiv.appendChild(label);
+    box.appendChild(checkDiv);
+    x = document.querySelectorAll('#blue');
+    x[i].addEventListener('click', function () {
+      if (x[i].checked) {
+        x[i].parentElement.classList.add('checked');
+      } else {
+        x[i].parentElement.classList.remove('checked');
+      }
+    });
+    console.log(x[i]);
+  };
+
+  for (var i = 0; i < arr.length; i++) {
+    var checkDiv;
+    var checkbox;
+    var label;
+    var x;
+
+    _loop(i);
   }
-}
+}; //Event listeners
+//Call the getLocation
 
-boxChecked(); //Event listeners
-
-checkBox.addEventListener('click', boxChecked); //Call the getLocation
 
 getLocation();
+showCheckBoxes();
 },{"regenerator-runtime/runtime":"node_modules/regenerator-runtime/runtime.js","axios":"node_modules/axios/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -2776,7 +2839,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50166" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51587" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

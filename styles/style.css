@@ -80,6 +80,11 @@ header .nav .nav-items ul .item a {
   color: #292929;
 }
 
+.checked {
+  background-color: #a0a0a0 !important;
+  color: #f5f5f5;
+}
+
 .btn {
   background-color: #286d5f;
   color: #f5f5f5;

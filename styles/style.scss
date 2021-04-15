@@ -2,6 +2,7 @@
 $whiteSmoke: #f5f5f5;
 $blackVari: #292929;
 $greenBtn: #286d5f;
+$greyBckg: #a0a0a0;
 * {
   margin: 0;
   padding: 0;
@@ -60,6 +61,10 @@ header {
       }
     }
   }
+}
+.checked{
+  background-color: $greyBckg!important;
+  color: $whiteSmoke;
 }
 .btn {
   background-color: $greenBtn;
